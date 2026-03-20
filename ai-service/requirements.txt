@@ -1,0 +1,16 @@
+fastapi==0.111.0
+uvicorn==0.30.0
+pydantic==2.7.1
+pydantic-settings==2.2.1
+opencv-python-headless==4.9.0.80
+ultralytics==8.2.0
+torch==2.3.0
+torchvision==0.18.0
+transformers==4.41.0
+easyocr==1.7.1
+minio==7.2.7
+python-multipart==0.0.9
+Pillow==10.3.0
+numpy==1.26.4
+requests==2.31.0
+python-dotenv==1.0.0
