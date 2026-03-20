@@ -33,16 +33,15 @@ async def analyze_video(request: AnalyzeRequest):
             frame = resize_frame(frame, max_size=640)
             objects = detect_objects(frame)
 
-           for obj in objects:
-    # ← raise this threshold to skip weak detections
-    if obj['confidence'] < 0.4:
-        continue
+            for obj in objects:
+                if obj['confidence'] < settings.CONFIDENCE_THRESHOLD:
+                    continue
 
-    match = match_logo(
-        frame,
-        obj['bounding_box'],
-        request.logo_names
-    )
+                match = match_logo(
+                    frame,
+                    obj['bounding_box'],
+                    request.logo_names
+                )
 
                 if match:
                     all_detections.append({
